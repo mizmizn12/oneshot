@@ -66,11 +66,11 @@ train_params:
     equivariance_jacobian: 10
 
 reconstruction_params:
-  num_videos: 1000
+  num_videos: 2000
   format: '.mp4'
 
 animate_params:
-  num_pairs: 50
+  num_pairs: 25
   format: '.mp4'
   normalization_params:
     adapt_movement_scale: False
