@@ -10,7 +10,7 @@ import copy
 
 class PositionalEncoding(nn.Module):
 
-    def __init__(self, d_hid, n_position=200):
+    def __init__(self, d_hid, n_position=100):
         super(PositionalEncoding, self).__init__()
 
         # Not a parameter
@@ -21,7 +21,7 @@ class PositionalEncoding(nn.Module):
         # TODO: make it with torch instead of numpy
 
         def get_position_angle_vec(position):
-            return [position / np.power(10000, 2 * (hid_j // 2) / d_hid) for hid_j in range(d_hid)]
+            return [position / np.power(5000, 2 * (hid_j // 2) / d_hid) for hid_j in range(d_hid)]
 
         sinusoid_table = np.array([get_position_angle_vec(pos_i) for pos_i in range(n_position)])
         sinusoid_table[:, 0::2] = np.sin(sinusoid_table[:, 0::2])  # dim 2i
