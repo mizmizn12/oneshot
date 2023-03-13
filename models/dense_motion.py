@@ -31,7 +31,7 @@ class DenseMotionNetwork(nn.Module):
 
     def create_heatmap_representations(self, source_image, kp_driving, kp_source):
         """
-        Eq 6. in the paper H_k(z)
+        Eq 2. in the paper H_k(z)
         """
         spatial_size = source_image.shape[2:]
         gaussian_driving = kp2gaussian(kp_driving, spatial_size=spatial_size, kp_variance=self.kp_variance)
